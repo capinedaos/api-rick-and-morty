@@ -17,7 +17,7 @@ const ResidentInfo = ({ url }) => {
         <div
           className="dead"
           style={{
-            background: resident.status === "Dead" ? "#ff0000" : "#d3d3d3",
+            background: resident.status === "Dead" ? "#ff0000" : "#adff2f",
           }}
         ></div>
         <p>

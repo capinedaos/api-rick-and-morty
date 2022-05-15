@@ -11,13 +11,23 @@
 }
 
 .img img {
-  width: 1024px;
-  height: 100%;
+  width: 1000px;
+  height: 90%;
+  user-select: none;
+  color: #adff2f;
 }
 
 .text-input-header {
-  border: 1px solid #674328;
+  /* border: 1px solid #674328; */
   width: 100%;
+  position: relative;
+}
+
+.text-location {
+  display: flex;
+  /* border: 1px solid #674328; */
+  justify-content: space-around;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -25,6 +35,9 @@ h1 {
   font-size: 10vh;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  position: absolute;
+  top: -10rem;
+  left: 20%;
 }
 
 input {
@@ -67,14 +80,41 @@ button:hover {
   color: #2d1706;
 }
 
-input:focus {
+input:hover {
   background-color: #fff;
   color: #2d1706;
 }
 
-.swiperSlide {
-  border: 1px solid #674328;
-  padding: 1rem;
+.swiper-slide {
   user-select: none;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-pagination-bullet {
+  width: 25px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev :hover {
+  color: greenyellow;
+}
+
+.swiper {
   width: 100%;
+  background-color: #674328;
+  /* background-image: url(../assets/images/rick-and-morty-firewatch-wallpaper.jpg); */
 }

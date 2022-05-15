@@ -1,17 +1,17 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import SwiperCore, { Navigation, Pagination, EffectCoverflow } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { v4 as uuiv4 } from "uuid";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 import "../style/Location.css";
 import background from "../assets/images/background.jpg";
 import ResidentInfo from "./ResidentInfo";
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
+// SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Location = () => {
   const [location, setLocation] = useState({});
@@ -50,7 +50,7 @@ const Location = () => {
           <button onClick={searchId}>Search</button>
 
           <h2>{location.name}</h2>
-          <div className="location">
+          <div className="text-location">
             <p>
               <span>Type: </span>
               {location.type}
@@ -67,24 +67,33 @@ const Location = () => {
         </div>
       </div>
 
-      <div className="swiperSlide">
-        <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={location.residents?.length}
-          slidesPerView={4}
-          navigation
-          pagination={{ clickable: true }}
-          scrollbar={{ draggable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
-        >
-          {location.residents?.map((resident) => (
-            <SwiperSlide>
-              <ResidentInfo url={resident} key={uuiv4()} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      <Swiper
+        modules={[Navigation, Pagination, EffectCoverflow]}
+        spaceBetween={1}
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log("slide change")}
+        className="swiper-slide"
+        navigation={true}
+        effect={"coverflow"}
+        centeredSlides={true}
+        slidesPerView={window.innerWidth < 768 ? 1 : 3}
+        loop={true}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+      >
+        {location.residents?.map((resident) => (
+          <SwiperSlide key={uuiv4()}>
+            <ResidentInfo url={resident} key={uuiv4()} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
