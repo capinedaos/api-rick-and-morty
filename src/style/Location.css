@@ -18,26 +18,20 @@
 }
 
 .text-input-header {
-  /* border: 1px solid #674328; */
   width: 100%;
-  position: relative;
 }
 
 .text-location {
   display: flex;
-  /* border: 1px solid #674328; */
   justify-content: space-around;
   margin-bottom: 1rem;
 }
 
 h1 {
   font-family: "Macondo", cursive, "Roboto", sans-serif;
-  font-size: 10vh;
+  font-size: 40px;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  position: absolute;
-  top: -10rem;
-  left: 20%;
 }
 
 input {
