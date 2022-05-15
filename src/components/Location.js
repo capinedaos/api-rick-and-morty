@@ -35,32 +35,35 @@ const Location = () => {
   return (
     <div className="location">
       <div>
-        <div className="header">
+        <div className="img">
           <img src={background} alt="" />
         </div>
-        <h1>Rick and Morty</h1>
-        <input
-          type="text"
-          onChange={(e) => setId(e.target.value)}
-          value={id}
-          placeholder="type a location id"
-        />
-        <button onClick={searchId}>Search</button>
+        <div className="text-input-header">
+          <h1>Rick and Morty</h1>
 
-        <h2>{location.name}</h2>
-        <div className="location">
-          <p>
-            <span>Type: </span>
-            {location.type}
-          </p>
-          <p>
-            <span>Dimensión: </span>
-            {location.dimension}
-          </p>
-          <p>
-            <span>Population: </span>
-            {location.residents?.length}{" "}
-          </p>
+          <input
+            type="text"
+            onChange={(e) => setId(e.target.value)}
+            value={id}
+            placeholder="type a location id"
+          />
+          <button onClick={searchId}>Search</button>
+
+          <h2>{location.name}</h2>
+          <div className="location">
+            <p>
+              <span>Type: </span>
+              {location.type}
+            </p>
+            <p>
+              <span>Dimensión: </span>
+              {location.dimension}
+            </p>
+            <p>
+              <span>Population: </span>
+              {location.residents?.length}{" "}
+            </p>
+          </div>
         </div>
       </div>
 

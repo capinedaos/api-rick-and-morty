@@ -1,14 +1,23 @@
 .location {
   margin: 0rem 2rem 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .location p {
   margin: 5px;
 }
 
-.header img {
+.img img {
   width: 1024px;
   height: 100%;
+}
+
+.text-input-header {
+  border: 1px solid #674328;
+  width: 100%;
 }
 
 h1 {
