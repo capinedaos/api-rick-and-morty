@@ -11,7 +11,6 @@ import background from "../assets/images/background.jpg";
 import ResidentInfo from "./ResidentInfo";
 
 SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
-// SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const Location = () => {
   const [location, setLocation] = useState({});
